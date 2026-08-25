@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <string.h> // Required for strlen()
+#include <string.h> 
 
 int roman(char c){
     switch (c){
@@ -10,12 +10,12 @@ int roman(char c){
         case 'C': return 100;
         case 'D': return 500;
         case 'M': return 1000;
-        default : return 0; // Fixed typo: 'defalut' to 'default'
+        default : return 0; 
     }
 }
 
 int romanToInt(char* s) {
-    int len = strlen(s); // Fixed: sizeof(s) only gives the size of the pointer (usually 4 or 8)
+    int len = strlen(s); 
     int total = 0;
     
     for (int i = 0; i < len - 1; i++){
@@ -23,9 +23,9 @@ int romanToInt(char* s) {
         int next = roman(s[i + 1]);
         
         if (current < next){
-            total = total - current; // Fixed: Use 'current', not the character 's[i]'
+            total = total - current; 
         } else {
-            total = total + current; // Fixed: Use 'current', not the character 's[i]'
+            total = total + current; 
         }
     }
     
